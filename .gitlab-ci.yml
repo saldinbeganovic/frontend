@@ -1,0 +1,29 @@
+image: node
+stages:
+  - build
+  - deploy
+build staging:
+  image: node:10.15.0-stretch
+  stage: build
+  only:
+    - develop
+  script:
+    - npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+    - npm config set "//npm.fontawesome.com/:_authToken" 421DED1D-5AD4-4896-B196-7DA569EB2C47
+    - npm install
+    - npm run build -- --mode staging
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+deploy staging:
+  image: python:latest
+  stage: deploy
+  only:
+    - develop
+  environment:
+    name: staging
+    url: http://monitorv2-fe-staging.s3-website.eu-central-1.amazonaws.com
+  script:
+    - pip install awscli
+    - aws s3 sync ./dist s3://monitorv2-fe-staging --cache-control max-age=0

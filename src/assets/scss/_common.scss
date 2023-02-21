@@ -1,0 +1,36 @@
+@import "variables";
+
+.mo {
+  &-border__sm {
+    border-radius: $mo-radius-sm !important;
+  }
+  &-border {
+    border-radius: $mo-radius !important;
+  }
+  &-border__lg {
+    border-radius: $mo-radius-lg !important;
+  }
+  &-border__none {
+    border: none !important;
+  }
+  &-error {
+    i {
+      font-size: 50px;
+      color: $danger;
+    }
+  }
+  &-store-btn {
+    width: 100%;
+    display: flex;
+    & > img {
+      max-width: 150px;
+      width: 100%;
+      margin: auto;
+    }
+  }
+  &-plain-button {
+    border: 2px solid #dfe2e5;
+    background: none !important;
+    color: $dark !important;
+  }
+}

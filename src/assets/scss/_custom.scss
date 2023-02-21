@@ -1,0 +1,117 @@
+@import "variables";
+
+button {
+  border: none;
+  background: none;
+}
+
+.mo-video {
+  border-radius: $mo-radius;
+}
+
+.b-toaster {
+  @mixin toast($text, $bcg) {
+    .toast {
+      border-radius: $mo-radius;
+      &-header {
+        background: transparent;
+        strong {
+          color: $text;
+        }
+      }
+      color: $text;
+      background: $bcg;
+    }
+  }
+  .b-toast {
+    @include toast(white, $danger);
+    &-danger {
+      @include toast(white, $danger);
+    }
+    &-primary {
+      @include toast(white, $primary);
+    }
+    &-success {
+      @include toast(white, $success);
+    }
+    &-info {
+      @include toast(white, $primary);
+    }
+  }
+}
+
+.custom-control-input ~ .custom-control-label::before {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3) !important;
+  background-color: unset;
+}
+
+.mo {
+  &-alert {
+    border-radius: $mo-radius;
+    width: 100%;
+    &__info {
+      @extend .mo-alert;
+      background: transparentize($primary, 0.8);
+      color: $primary;
+    }
+    &__light {
+      @extend .mo-alert;
+      background: transparentize(white, 0.8);
+      color: white;
+    }
+  }
+  &-modal {
+    border-radius: $mo-radius;
+  }
+  &-dropzone {
+    width: 100%;
+    border-radius: $mo-radius;
+  }
+
+  // we need to apply blur filter to the background
+  // this is a sort of neat way to do it without touching any html:
+  // 1. insert a ::before element and apply a background to it
+  // 2. insert another ::after element and apply blur to it (this is needed so the borders aren't blurred)
+
+  &-img-bcg {
+    &::before {
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: url("~@/assets/images/background.jpg"),
+        linear-gradient(
+          154.33deg,
+          rgba(0, 0, 0, 0.6) 1.9%,
+          rgba(201, 180, 147, 0) 106.9%
+        );
+      background-size: cover;
+      background-position: 50% 0;
+    }
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+    }
+    & * {
+      z-index: 2;
+    }
+  }
+}
+
+.mo-order-decorating-modal {
+  &__dialog {
+    max-width: 80vw !important;
+  }
+}
+
+.orientation-width {
+  min-width: 50vw;
+}

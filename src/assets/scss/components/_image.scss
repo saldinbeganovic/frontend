@@ -1,0 +1,55 @@
+@import "../variables";
+
+.mo {
+  &-img {
+    border-radius: $mo-radius-lg;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-position: center;
+    background-color: $light-grey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &__btn {
+      position: absolute;
+      box-shadow: $shadow;
+      background: white;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      bottom: 10px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out all;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &__edit {
+      @extend .mo-img__btn;
+      right: 10px;
+      color: $dark-grey;
+    }
+    &__delete {
+      @extend .mo-img__btn;
+      left: 10px;
+      color: $dark-grey;
+    }
+    &__expand {
+      @extend .mo-img__btn;
+
+      color: $dark-grey;
+    }
+    &__logo {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      i {
+        font-size: 6em;
+      }
+    }
+  }
+}

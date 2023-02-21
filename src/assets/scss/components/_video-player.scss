@@ -1,0 +1,56 @@
+@import "../variables";
+
+.mo-video-player {
+  overflow: hidden;
+  position: relative;
+  border: 3px solid $dark;
+  border-radius: $mo-radius-lg;
+  &__loader {
+    z-index: 9;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    color: white;
+  }
+  &__video {
+    z-index: 10;
+  }
+  &__controls-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 11;
+    right: 0;
+    left: 10px;
+    bottom: -50px;
+    color: white;
+    button {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      background: $dark;
+      color: white;
+      i {
+        transition: 0.3s ease all;
+      }
+      &:hover {
+        i {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  &__controls-wrapper2 {
+    border: 3px solid rgba(226, 226, 226, 0.589);
+    border-radius: $mo-radius-lg;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 11;
+    right: 0;
+    left: 0;
+    bottom: -155px;
+    color: white;
+    
+  }
+}

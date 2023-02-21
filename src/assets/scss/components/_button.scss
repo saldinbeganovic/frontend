@@ -1,0 +1,102 @@
+@import "../variables";
+
+button[disabled] {
+  background: #a0a6ab !important;
+  border-color: #a0a6ab !important;
+}
+
+.mo-btn {
+  background: $light;
+  color: $dark;
+  border: 2px solid black;
+  border-radius: $mo-radius;
+  height: $mo-height;
+  overflow: hidden;
+  padding: 0;
+  @mixin danger {
+    // background: $dark-grey;
+    border-color: $danger;
+  }
+  @mixin outline($color) {
+    background: none;
+    border-color: $color;
+    color: $color;
+  }
+  @mixin light {
+    background: white;
+    border: none;
+    color: $dark;
+    box-shadow: $shadow;
+  }
+  &__inverted {
+    @extend .mo-btn;
+    background: $dark;
+    color: $light;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $light !important;
+      color: $dark !important;
+    }
+  }
+  &__outline {
+    @extend .mo-btn;
+    @include outline($primary);
+  }
+  &__danger {
+    @extend .mo-btn;
+    @include danger();
+    &__outline {
+      @extend .mo-btn__danger;
+      @include outline($danger);
+    }
+  }
+  &__sm {
+    @extend .mo-btn;
+    height: $mo-height-sm;
+    border-radius: $mo-radius-lg;
+    width: 180px;
+    &__outline {
+      @extend .mo-btn__sm;
+      @include outline($primary);
+    }
+    &__light {
+      @extend .mo-btn__sm;
+      @include light();
+    }
+    &__danger {
+      @extend .mo-btn__sm;
+      @include danger();
+      &__outline {
+        @extend .mo-btn__danger;
+        @include outline($danger);
+      }
+    }
+  }
+  &__secondary {
+    background: none;
+    border-radius: $mo-radius;
+    height: $mo-height;
+    border: 2px solid $primary;
+    color: $primary;
+  }
+
+  &__add {
+    background: none !important;
+    color: $primary !important;
+    border: none !important;
+  }
+
+  &__simple {
+    background: none !important;
+    color: $dark-grey !important;
+    border: none !important;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: $dark;
+    border: 2px solid $dark;
+    color: $light;
+  }
+}

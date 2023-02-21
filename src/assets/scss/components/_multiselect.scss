@@ -1,0 +1,36 @@
+@import "../variables";
+
+.mo-multiselect {
+  &__items-wrapper {
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+  &__item {
+    margin: 0 2px;
+  }
+  &__add {
+    color: $primary;
+  }
+  &__delete {
+    color: $danger;
+  }
+}
+.customSelect{
+  width: 130px;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: $light;
+  color: $dark;
+  border: 2px solid black;
+  border-radius: $mo-radius;
+  height: 2.5rem;
+  cursor:pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:hover,
+  &:active {
+    background: $dark;
+    border: 2px solid $dark;
+    color: $light;
+  }
+}

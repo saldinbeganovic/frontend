@@ -1,0 +1,24 @@
+
+@import "../../../assets/scss/variables";
+$mo-schedules-pagination-height: 6vh;
+$mo-schedules-table-height: calc(
+        #{$mo-content-height} - #{$mo-schedules-pagination-height} - 10px
+);
+.mo-schedules-table {
+  max-height: $mo-schedules-table-height;
+  &__head {
+    th {
+      display: flex !important;
+    }
+  }
+  &__pagination {
+    height: $mo-schedules-pagination-height;
+  }
+}
+.cut-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

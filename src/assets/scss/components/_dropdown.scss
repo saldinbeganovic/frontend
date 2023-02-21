@@ -1,0 +1,38 @@
+@import "../variables";
+
+.mo-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  overflow: unset;
+  z-index: 99;
+
+  &__menu {
+    border-radius: $mo-radius;
+    border: none;
+    box-shadow: $shadow;
+    .dropdown-item {
+      &:hover,
+      &:active,
+      &:focus {
+        background: $dark;
+        color: $light;
+      }
+    }
+  }
+  &__icon {
+    color: $dark;
+    border-radius: 50%;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    box-shadow: $shadow;
+    transform: scale(1.2) translateX(-15px);
+  }
+}
+
+.show > .btn-secondary.dropdown-toggle {
+  background: $dark !important;
+}

@@ -1,0 +1,71 @@
+@import "../variables";
+
+.mo-status-badge {
+  border-radius: $mo-radius-lg;
+  background: none;
+  height: 37.5px;
+  border: 2px solid $primary;
+  transition: 0.1s ease-in-out border-color;
+  outline: none;
+  color: $primary;
+  &:hover {
+    background: $primary;
+    color: white;
+  }
+  &__disabled {
+    @extend .mo-status-badge;
+    border-color: $dark !important;
+    color: $dark !important;
+    background: none !important;
+    &__unclickable {
+      @extend .mo-status-badge__disabled;
+    }
+  }
+  &__danger {
+    color: $danger;
+    border-color: $danger;
+    &:hover {
+      background: $danger;
+      color: white;
+    }
+    &__unclickable {
+      @extend .mo-status-badge__danger;
+      background: none !important;
+      color: $danger !important;
+    }
+  }
+  &__warning {
+    color: $warning;
+    border-color: $warning;
+    &:hover {
+      background: $warning;
+      color: white;
+    }
+  }
+  &__success {
+    color: $success;
+    border-color: $success;
+    &:hover {
+      background: $success;
+      color: white;
+    }
+    &__unclickable {
+      @extend .mo-status-badge__success;
+      background: none !important;
+      color: $success !important;
+    }
+  }
+  &__purple {
+    color: $purple;
+    border-color: $purple;
+    &:hover {
+      background: $purple;
+      color: white;
+    }
+    &__unclickable {
+      @extend .mo-status-badge__purple;
+      background: none !important;
+      color: $purple !important;
+    }
+  }
+}

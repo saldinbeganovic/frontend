@@ -1,0 +1,154 @@
+@import "../_variables.scss";
+
+.mo-table {
+  a:not([href]) {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  &__multiple {
+    max-height: 600px !important;
+    margin-bottom: 3rem !important;
+  }
+  &__checkbox {
+    @extend .mo-table;
+    td.select {
+      width: 1px;
+      text-align: center;
+    }
+  }
+  a,
+  .options i {
+    color: $dark-grey;
+  }
+  th {
+    user-select: none;
+    outline: none;
+    white-space: nowrap;
+    i {
+      margin-left: 5px;
+    }
+    .multiselect {
+      max-width: 200px;
+      * {
+        font-size: 10px;
+      }
+      &__content-wrapper {
+        max-width: 300px;
+      }
+    }
+    select {
+      color: white;
+      background: $dark;
+      border-color: #dddddd;
+      border-radius: $mo-radius;
+      font-weight: bold;
+      width: 100%;
+    }
+  }
+  margin-bottom: 0 !important;
+  tbody tr td {
+    border-left: 1px dashed #dddddd !important;
+    border-right: 1px dashed #dddddd !important;
+  }
+  tbody tr td:first-child {
+    border-left: none !important;
+  }
+  tbody tr:nth-of-type(odd) {
+    background-color: unset;
+    &:hover {
+      background-color: opacify($light-grey, 0.9);
+    }
+  }
+  tbody tr:nth-of-type(even) {
+    background-color: opacify($light-grey, 0.95);
+    &:hover {
+      background-color: opacify($light-grey, 0.9);
+    }
+  }
+  &__bordered {
+    @extend .mo-table;
+    th {
+      background-color: transparent;
+    }
+    tbody tr {
+      border-top: 1px solid $light-grey;
+      background: none !important;
+    }
+  }
+
+  &__head {
+    tr > [aria-sort="none"] {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='101' height='101' view-box='0 0 101 101' preserveAspectRatio='none'%3e%3cpath fill='%2300A1FF' opacity='.8' d='M51 1l25 23 24 22H1l25-22zM51 101l25-23 24-22H1l25 22z'/%3e%3c/svg%3e") !important;
+    }
+    tr > [aria-sort="ascending"],
+    .table.b-table > tfoot > tr > [aria-sort="ascending"] {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='101' height='101' view-box='0 0 101 101' preserveAspectRatio='none'%3e%3cpath fill='%2300A1FF' d='M51 1l25 23 24 22H1l25-22z'/%3e%3cpath fill='%2300A1FF' opacity='.3' d='M51 101l25-23 24-22H1l25 22z'/%3e%3c/svg%3e") !important;
+    }
+    tr > [aria-sort="descending"],
+    .table.b-table > tfoot > tr > [aria-sort="descending"] {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='101' height='101' view-box='0 0 101 101' preserveAspectRatio='none'%3e%3cpath fill='%2300A1FF' opacity='.3' d='M51 1l25 23 24 22H1l25-22z'/%3e%3cpath fill='%2300A1FF' d='M51 101l25-23 24-22H1l25 22z'/%3e%3c/svg%3e") !important;
+    }
+    tr > th {
+      background-color: $dark !important;
+      color: white !important;
+      vertical-align: middle;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  tbody > tr {
+    height: 35px !important;
+  }
+
+  th,
+  td {
+    padding: 5px 10px;
+    border: none !important;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__edit {
+    background: none !important;
+    border: none !important;
+    color: $primary;
+    &:hover {
+      color: $dark;
+    }
+  }
+  &__delete {
+    background: none !important;
+    border: none !important;
+    color: $danger;
+    &:hover {
+      color: $dark;
+    }
+  }
+
+  .custom-control-input {
+    // customise checkbox color on "checked" state
+    &:checked ~ .custom-control-label::before {
+      border-color: $primary;
+      background-color: $primary;
+      box-shadow: $shadow;
+    }
+
+    // customise checkbox color on "unchecked" state
+    & ~ .custom-control-label::before {
+      border-color: white;
+      background-color: white;
+      box-shadow: $shadow;
+    }
+  }
+  .id {
+    width: 70px;
+  }
+}

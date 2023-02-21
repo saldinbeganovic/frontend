@@ -1,0 +1,100 @@
+@import "variables";
+
+.mo-input {
+  background-color: $light-grey;
+  height: $mo-height;
+  border-radius: $mo-radius;
+  //the variable $light-grey is not used since i copied the deafult of bootstrap
+  border: 1px solid #ced4da;
+  &__light {
+    @extend .mo-input;
+    background-color: white;
+    box-shadow: $shadow;
+    &:focus {
+      border: 2px solid $darkish-grey;
+    }
+    &-sm {
+      @extend .mo-input__light;
+      height: $mo-height-sm;
+      border-radius: $mo-radius-lg;
+    }
+    &-sm-phone {
+      @extend .mo-input__light;
+      height: unset;
+      border-radius: $mo-radius-lg;
+    }
+  }
+  &:focus {
+    border: 2px solid $darkish-grey;
+  }
+}
+
+.custom-control-input {
+  // customise checkbox color on "checked" state
+  &:checked ~ .custom-control-label::before {
+    border-color: $primary;
+    background-color: $primary;
+  }
+
+  // customise checkbox color on "unchecked" state
+  & ~ .custom-control-label::before {
+    border-color: $light-grey;
+    background-color: $light-grey;
+  }
+}
+
+.multiselect {
+  box-shadow: $shadow;
+  background: $light-grey;
+  &__tag {
+    background: $primary !important;
+  }
+  &__content-wrapper {
+    border-radius: $mo-radius-lg !important;
+  }
+  &__option--selected.multiselect__option--highlight,
+  &__option--selected.multiselect__option--highlight:after {
+    background: $danger !important;
+  }
+  &__option--highlight,
+  &__option--highlight:after {
+    background: $primary !important;
+  }
+  &__option--selected,
+  &__option--selected:after {
+    background: $cream-grey !important;
+  }
+  &__tags {
+    border: 2px solid transparent !important;
+    border-radius: $mo-radius-lg !important;
+  }
+  &:focus &__tags {
+    border: 2px solid $darkish-grey !important;
+  }
+}
+
+input[id="postal-code"]::-webkit-inner-spin-button,
+input[id="postal-code"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[id="postal-code"] {
+  -moz-appearance: textfield;
+}
+
+.vue-phone-number-input {
+  border: none !important;
+}
+
+.input-tel__input {
+  border-top-right-radius: $mo-radius-lg !important;
+  border-bottom-right-radius: $mo-radius-lg !important;
+  height: 42px;
+}
+
+.country-selector__input {
+  border-top-left-radius: $mo-radius-lg !important;
+  border-bottom-left-radius: $mo-radius-lg !important;
+  height: 42px;
+}

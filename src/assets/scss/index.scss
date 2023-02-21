@@ -1,0 +1,38 @@
+// custom monitor styles
+@import "variables";
+@import "input";
+@import "text";
+@import "custom";
+@import "common";
+
+// login partial
+@import "login/login";
+
+// layout partials
+@import "layouts/dashboard";
+
+// component partials
+@import "components/button";
+@import "components/code-input";
+@import "components/dropdown";
+@import "components/image";
+@import "components/multiselect";
+@import "components/multiadd";
+@import "components/status-badge";
+@import "components/table";
+@import "components/video-card";
+@import "components/attachment-list";
+@import "components/video-player";
+@import "components/schedules-list";
+
+// font awesome icons
+@import "~@fortawesome/fontawesome-pro/css/all.css";
+
+#app {
+  height: 100vh;
+}
+html {
+  //font size is set to 18px.
+  //Try to set for other components with rem, to be relative to this size
+  font-size: 21px;
+}

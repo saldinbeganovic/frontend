@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import "variables";
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mo {
+  &-bg {
+    &__primary {
+      background: $primary !important;
+    }
+    &__danger {
+      background: $danger !important;
+    }
+    &__success {
+      background: $success !important;
+    }
+    &__light {
+      background: $darkish-grey !important;
+    }
+  }
+  &-text {
+    &__primary {
+      color: $primary !important;
+    }
+    &__danger {
+      color: $danger !important;
+    }
+    &__success {
+      color: $success !important;
+    }
+    &__light {
+      color: $darkish-grey !important;
+    }
+  }
+  &-title {
+    &__big {
+      line-height: 60px;
+      font-size: 3em;
+      margin-bottom: 2.5em;
+    }
+    &__light {
+      color: $light-grey;
+    }
+    &__dark {
+      color: $dark;
+    }
+  }
+  &-p {
+    &__light {
+      color: $light-grey;
+    }
+    &__dark {
+      color: $dark;
+    }
+  }
+}
